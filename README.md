@@ -1,3 +1,3 @@
-# Udemy-Courses-with-Certificates
+# Udemy DB Courses
 
-Files created during Udemy.com courses (with certificates).
+Files created during Udemy.com database courses.
