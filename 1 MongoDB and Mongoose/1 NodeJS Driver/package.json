@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon app1.ts",
     "start2": "nodemon app2.ts",
-    "start3": "ts-node app3.ts"
+    "start3": "ts-node app3.ts",
+    "start4": "ts-node app4.ts"
   },
   "keywords": [],
   "author": "",
