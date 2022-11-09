@@ -1,0 +1,15 @@
+{
+  "name": "2-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app1.ts",
+  "scripts": {
+    "start": "ts-node app1.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.13.15"
+  }
+}
