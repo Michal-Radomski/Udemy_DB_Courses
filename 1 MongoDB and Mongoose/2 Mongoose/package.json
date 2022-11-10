@@ -10,7 +10,9 @@
     "start3": "nodemon schema2.ts",
     "start4": "nodemon schema3.ts",
     "start5": "nodemon schema4.ts",
-    "start6": "nodemon schema5.ts"
+    "start6": "nodemon schema5.ts",
+    "start7": "nodemon schema6.ts",
+    "start8": "nodemon crud1.ts"
   },
   "keywords": [],
   "author": "",

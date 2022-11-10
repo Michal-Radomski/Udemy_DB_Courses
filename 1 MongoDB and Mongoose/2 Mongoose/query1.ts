@@ -17,26 +17,28 @@ mongoose
 
 let schema = new mongoose.Schema(
   {
-    //_id:Number,
     brand: String,
     model: String,
-    year: { type: Number, index: true, alias: "Y" },
+    year: Number,
+    location: String,
   },
-  {
-    // autoCreate: false, //* Create new collection - default false
-    // autoIndex: false,
-    // _id: true,
-    // id: false,
-    collection: "my_car",
-  }
+  { collection: "cars2" }
 );
 
 let Car = mongoose.model("Car", schema);
 
-let doc = new Car({ brand: "Nissan", model: "GT-R", year: 2010 });
-console.log(doc.id);
-
-doc.save((err, res) => {
-  if (err) throw err;
-  console.log(res);
-});
+Car
+  //.find()
+  .where()
+  .where("brand")
+  .in(["Toyota", "Lexus"])
+  .select("-_id -__v")
+  .sort({ year: 1 })
+  .count()
+  .find()
+  .exec((err: any, res: any) => {
+    if (err) {
+      console.log({ err });
+    }
+    console.log({ res });
+  });
