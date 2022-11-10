@@ -4,7 +4,8 @@
   "description": "",
   "main": "app1.ts",
   "scripts": {
-    "start": "nodemon app1.ts"
+    "start": "nodemon app1.ts",
+    "start1": "nodemon conn1.ts"
   },
   "keywords": [],
   "author": "",
