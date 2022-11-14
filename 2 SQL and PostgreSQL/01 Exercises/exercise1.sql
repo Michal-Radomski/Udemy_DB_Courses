@@ -60,3 +60,48 @@ SELECT
   UPPER(CONCAT(name, ', ', country)) AS location
 FROM
   cities;
+
+SELECT
+  name,
+  area
+FROM
+  cities
+WHERE
+  area > 4000;
+
+SELECT
+  name,
+  area
+FROM
+  cities
+WHERE
+  area BETWEEN 2000
+  AND 4000;
+
+SELECT
+  name,
+  area
+FROM
+  cities
+WHERE
+  NAME not in ('Delhi', 'Shanghai');
+
+SELECT
+  name,
+  population / area AS population_density
+FROM
+  cities
+WHERE
+  population / area > 6000;
+
+UPDATE
+  cities
+set
+  population = 39505000
+WHERE
+  NAME = 'Tokyo';
+
+DELETE FROM
+  cities
+WHERE
+  name = 'Tokyo';
