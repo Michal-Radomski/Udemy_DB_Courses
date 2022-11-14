@@ -13,3 +13,4 @@ node_modules/
 .vscode/
 build/
 dist/
+0_diagrams/
