@@ -52,3 +52,84 @@ order BY
   price DESC
 LIMIT
   5;
+
+(
+  select
+    *
+  FROM
+    products
+  order BY
+    price desc
+  LIMIT
+    4
+)
+UNION
+(
+  select
+    *
+  FROM
+    products
+  order BY
+    price / weight desc
+  LIMIT
+    4
+);
+
+(
+  select
+    *
+  FROM
+    products
+  order BY
+    price desc
+  LIMIT
+    4
+)
+INTERSECT
+(
+  select
+    *
+  FROM
+    products
+  order BY
+    price / weight desc
+  LIMIT
+    4
+);
+
+(
+  select
+    *
+  FROM
+    products
+  order BY
+    price desc
+  LIMIT
+    4
+)
+EXCEPT
+  (
+    select
+      *
+    FROM
+      products
+    order BY
+      price / weight desc
+    LIMIT
+      4
+  );
+
+select
+  name,
+  price
+FROM
+  products
+WHERE
+  price >(
+    select
+      max(price)
+    FROM
+      products
+    WHERE
+      department = 'Toys'
+  );
