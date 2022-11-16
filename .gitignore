@@ -14,3 +14,4 @@ node_modules/
 build/
 dist/
 0_diagrams/
+*-db.sql
