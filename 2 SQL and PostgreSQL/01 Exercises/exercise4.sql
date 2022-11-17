@@ -212,3 +212,138 @@ WHERE
     WHERE
       price / weight > 30
   );
+
+select
+  name,
+  price
+FROM
+  products
+WHERE
+  price >(
+    select
+      avg(price)
+    FROM
+      products
+  );
+
+select
+  department
+FROM
+  products
+WHERE
+  price < 100;
+
+select
+  name,
+  department
+FROM
+  products
+WHERE
+  department not in (
+    select
+      department
+    FROM
+      products
+    WHERE
+      price < 100
+  );
+
+select
+  name,
+  department,
+  price
+FROM
+  products
+WHERE
+  price > (
+    select
+      MAX(price)
+    FROM
+      products
+    WHERE
+      department = 'Industrial'
+  );
+
+select
+  name,
+  department,
+  price
+FROM
+  products
+WHERE
+  price > ALL (
+    select
+      price
+    from
+      products
+    WHERE
+      department = 'Industrial'
+  );
+
+select
+  name,
+  department,
+  price
+FROM
+  products
+WHERE
+  price > SOME (
+    select
+      price
+    from
+      products
+    WHERE
+      department = 'Industrial'
+  );
+
+select
+  name,
+  department,
+  price
+FROM
+  products As p1
+WHERE
+  p1.price = (
+    select
+      Max(price)
+    FROM
+      products as p2
+    WHERE
+      p1.department = p2.department
+  );
+
+select
+  p1.name,
+  (
+    select
+      COUNT(*)
+    FROM
+      orders as o1
+    WHERE
+      o1.product_id = p1.id
+  ) as num_orders
+from
+  products as p1;
+
+select
+  (
+    select
+      max(price)
+    FROM
+      products
+  );
+
+select
+  (
+    (
+      select
+        max(price)
+      FROM
+        products
+    ) / (
+      select
+        MIN(price)
+      FROM
+        products
+    )
+  );
