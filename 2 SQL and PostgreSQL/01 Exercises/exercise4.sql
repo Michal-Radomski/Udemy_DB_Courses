@@ -347,3 +347,46 @@ select
         products
     )
   );
+
+select
+  DISTINCT department,
+  name
+FROM
+  products;
+
+-- distinct over one single column!!!
+select
+  COUNT(DISTINCT department)
+FROM
+  products;
+
+select
+  GREATEST(20, 10, 30);
+
+select
+  name,
+  weight,
+  GREATEST(30, 2 * weight)
+FROM
+  products;
+
+select
+  LEAST(20, 10, 30);
+
+select
+  name,
+  price,
+  LEAST(price * 0.5, 400)
+FROM
+  products;
+
+select
+  name,
+  price,
+  CASE
+    WHEN price > 600 THEN 'high'
+    when price > 300 THEN 'medium'
+    ELSE 'cheap'
+  END
+FROM
+  products;
