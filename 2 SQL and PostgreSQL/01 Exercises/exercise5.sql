@@ -45,3 +45,9 @@ values
     '2022-nov-17 01:00AM',
     '2022-nov-22 01:00AM'
   );
+
+select
+  coalesce(null, 5);
+
+select
+  coalesce((5) :: Boolean :: Integer, 0);
