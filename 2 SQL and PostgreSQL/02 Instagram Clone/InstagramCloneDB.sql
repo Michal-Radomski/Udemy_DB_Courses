@@ -50,6 +50,7 @@ CREATE TABLE likes (
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   post_id INTEGER REFERENCES posts(id) ON DELETE CASCADE,
   comment_id INTEGER REFERENCES comments(id) ON DELETE CASCADE,
+  -- * Post_id or comment_id must be!!!
   CHECK(
     COALESCE((post_id) :: BOOLEAN :: INTEGER, 0) + COALESCE((comment_id) :: BOOLEAN :: INTEGER, 0) = 1
   ),
@@ -64,6 +65,7 @@ CREATE TABLE photo_tags (
   post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
   x INTEGER NOT NULL,
   y INTEGER NOT NULL,
+  -- * Combination of user_id, post_id is always unique!!!
   UNIQUE(user_id, post_id)
 );
 
