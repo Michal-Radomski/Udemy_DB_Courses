@@ -23,3 +23,15 @@ from
   join likes on likes.user_id = users.id
 group by
   username;
+
+show data_directory;
+
+select
+  oid,
+  datname
+from
+  pg_database
+select
+  *
+from
+  pg_class
