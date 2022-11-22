@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "migrate": "node-pg-migrate",
-    "start": "nodemon index.ts"
+    "start": "clear && nodemon index.ts"
   },
   "keywords": [],
   "author": "",

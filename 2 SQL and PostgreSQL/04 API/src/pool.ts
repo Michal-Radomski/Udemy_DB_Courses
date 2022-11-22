@@ -12,9 +12,14 @@ class Pool {
     return this._pool.end();
   }
 
-  // Big security issue here!!!
-  query(sql: string) {
-    return this._pool.query(sql);
+  //* Big security issue here!!!
+  // query(sql: string) {
+  //   return this._pool.query(sql);
+  // }
+
+  //* Prevent SQL Injection Exploit
+  query(sql: string, params?: string[]) {
+    return this._pool.query(sql, params);
   }
 }
 
