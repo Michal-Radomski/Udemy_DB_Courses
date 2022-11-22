@@ -4,19 +4,14 @@ exports.shorthands = undefined;
 
 exports.up = (pgm) => {
   pgm.sql(`
-CREATE TABLE comments (
-  id SERIAL PRIMARY KEY,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  contents VARCHAR(240) NOT NULL
-);
-`);
+ALTER TABLE posts ADD COLUMN loc POINT;
+  `);
 };
 
 exports.down = (pgm) => {
   pgm.sql(`
-  DROP TABLE comments;
-  `);
+  ALTER TABLE posts DROP COLUMN loc;
+    `);
 };
 
 // To run:

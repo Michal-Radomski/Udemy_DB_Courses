@@ -13,3 +13,6 @@ exports.down = (pgm) => {
   ALTER TABLE comments RENAME COLUMN body TO contents; 
   `);
 };
+
+// To run:
+// DATABASE_URL=postgres://<user>:<password>@localhost:5432/social_network npm run migrate up
