@@ -3,7 +3,7 @@ import toCamelCase from "./utils/toCamelCase";
 
 class UserRepo {
   static async find() {
-    const { rows } = await pool.query("SELECT * FROM users;");
+    const { rows } = await pool.query("SELECT * FROM users ORDER BY id ASC");
     return toCamelCase(rows);
   }
 
