@@ -357,3 +357,19 @@ Rollback;
 -- -------------------
 alter table
   comments rename column contents to body;
+
+-- New Schema -> test:
+create schema test;
+
+create table test.users (id serial primary key, username varchar);
+
+insert into
+  test.users (username)
+values
+  ('alex'),
+  ('burek');
+
+select
+  *
+from
+  test.users;
