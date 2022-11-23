@@ -12,6 +12,10 @@ beforeAll(async () => {
   context = await Context.build();
 });
 
+beforeAll(async () => {
+  await context.reset();
+});
+
 afterAll(() => {
   return context.close();
 });
