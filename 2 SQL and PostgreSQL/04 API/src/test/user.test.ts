@@ -1,24 +1,34 @@
-import * as dotenv from "dotenv";
-dotenv.config();
+// import * as dotenv from "dotenv";
+// dotenv.config();
 const request = require("supertest");
 
 import buildApp from "../app";
 import UserRepo from "../repo/user-repo";
-import pool from "../pool";
+// import pool from "../pool";
+import Context from "./Context";
 
-beforeAll(() => {
-  return pool.connect({
-    host: "localhost",
-    port: 5432,
-    database: "social_network-test",
-    user: process.env.user,
-    password: process.env.password,
-  });
+let context: Context;
+beforeAll(async () => {
+  context = await Context.build();
 });
 
 afterAll(() => {
-  return pool.close();
+  return context.close();
 });
+
+// beforeAll(() => {
+//   return pool.connect({
+//     host: "localhost",
+//     port: 5432,
+//     database: "social_network-test",
+//     user: process.env.user,
+//     password: process.env.password,
+//   });
+// });
+
+// afterAll(() => {
+//   return pool.close();
+// });
 
 it("Create a user", async () => {
   const startingCount = await UserRepo.count();
