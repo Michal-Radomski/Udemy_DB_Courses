@@ -8,3 +8,10 @@ SETNX color "red" -> SET + NX option
 
 MSET color "red" car "toyota" -> SET multiple keys/values
 MSETNX
+
+MGET color car -> multiple GET
+
+DEL color -> deletes a key
+
+GETRANGE car 0 2 -> letters "toy" from "toyota"
+SETRANGE -> updates portion of a string
