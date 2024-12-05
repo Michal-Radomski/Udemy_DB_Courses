@@ -1,0 +1,10 @@
+{
+  "id": "cba53b",
+  "fileName": "my-ready-block-notebook.json",
+  "name": "My Ready Block Notebook",
+  "cells": [
+    { "id": "1733435409512", "type": "redis", "content": "GET message\n" },
+    { "id": "70f07c", "type": "redis", "content": "SET message \"Hi There!\"\n" }
+  ],
+  "createdAt": "2024-12-05T21:42:43.290Z"
+}

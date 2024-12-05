@@ -1,0 +1,2 @@
+SET message "Hi There!"
+GET message
