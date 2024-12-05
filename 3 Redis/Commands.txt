@@ -15,3 +15,9 @@ DEL color -> deletes a key
 
 GETRANGE car 0 2 -> letters "toy" from "toyota"
 SETRANGE -> updates portion of a string
+
+INCR -> increase by 1
+DECR -> decrease by 1
+INCRBY
+DECRBY
+INCRBYFLOAT

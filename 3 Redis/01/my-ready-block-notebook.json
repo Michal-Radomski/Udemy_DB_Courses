@@ -1,1 +1,1 @@
-{"id":"cba53b","fileName":"my-ready-block-notebook.json","name":"My Ready Block Notebook","cells":[{"id":"1733435409512","type":"redis","content":"SET car toyota"},{"id":"1733436621605","type":"redis","content":"\nGETRANGE car 0 2"}],"createdAt":"2024-12-05T21:42:43.290Z"}
+{"id":"cba53b","fileName":"my-ready-block-notebook.json","name":"My Ready Block Notebook","cells":[{"id":"1733435409512","type":"redis","content":"SET car toyota"},{"id":"1733436621605","type":"redis","content":"INCRBYFLOAT\n"}],"createdAt":"2024-12-05T21:42:43.290Z"}
