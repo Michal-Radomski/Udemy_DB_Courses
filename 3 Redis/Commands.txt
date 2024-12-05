@@ -1,2 +1,10 @@
-SET message "Hi There!"
+SET message "Hi There!" -> flags: NX, XX
 GET message
+
+SET color "red" EX 2 -> Expired after 2 seconds
+
+SETEX color 2 "red" -> SET + expired in 2 seconds
+SETNX color "red" -> SET + NX option
+
+MSET color "red" car "toyota" -> SET multiple keys/values
+MSETNX

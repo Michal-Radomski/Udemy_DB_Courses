@@ -1,10 +1,1 @@
-{
-  "id": "cba53b",
-  "fileName": "my-ready-block-notebook.json",
-  "name": "My Ready Block Notebook",
-  "cells": [
-    { "id": "1733435409512", "type": "redis", "content": "GET message\n" },
-    { "id": "70f07c", "type": "redis", "content": "SET message \"Hi There!\"\n" }
-  ],
-  "createdAt": "2024-12-05T21:42:43.290Z"
-}
+{"id":"cba53b","fileName":"my-ready-block-notebook.json","name":"My Ready Block Notebook","cells":[{"id":"1733435409512","type":"redis","content":"SET color \"red\" EX 2\nGET color\n"},{"id":"1733436621605","type":"redis","content":"SETEX color 2 \"red\"\nSETNX color \"red\"\n\nMSET color \"red\" car \"toyota\"\n"}],"createdAt":"2024-12-05T21:42:43.290Z"}
