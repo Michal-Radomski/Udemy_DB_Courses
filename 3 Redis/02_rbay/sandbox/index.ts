@@ -15,6 +15,7 @@ const run = async (): Promise<void> => {
 
   const car2 = await client.hGetAll("car2");
 
+  //* Because if id desn't exists redis return {}!
   if (Object.keys(car2).length === 0) {
     console.log("Car not found, respond with 404");
     return;
