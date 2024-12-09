@@ -21,3 +21,8 @@ DECR -> decrease by 1
 INCRBY
 DECRBY
 INCRBYFLOAT
+
+HSET company name 'Fancy Concrete' age 1950 -> set object {name: "...", age: ...}
+HGET company name
+HGETALL company -> get all data, formatted as array of object
+
