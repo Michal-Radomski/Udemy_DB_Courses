@@ -6,6 +6,11 @@ const run = async (): Promise<void> => {
   await client.hSet("car2", {
     color: "red",
     year: 1950,
+    // engine: { cylinders: 8 }, [object Object]
+    // owner: null,    //* null.toString()
+    // service: undefined, //* undefined.toString()
+    // owner: null || "",
+    // service: undefined || ""
   });
 
   const car2 = await client.hGetAll("car2");
