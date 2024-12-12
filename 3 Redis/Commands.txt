@@ -22,8 +22,25 @@ INCRBY
 DECRBY
 INCRBYFLOAT
 
+~HASH
 HSET company name 'Fancy Concrete' age 1950 -> set object {name: "...", age: ...}
 HGET company name
 HGETALL company -> get all data, formatted as array of object
 HKEYS
 HVALS
+
+~SETS
+SADD colors red -> Set add color red
+SMEMBERS colors -> Set members
+SADD colors:1 red blue orange
+SADD colors:2 blue green purple
+SADD colors:3 blue red purple
+SUNION colors:1 colors:2 colors:3 -> Set union
+SINTER colors:1 colors:2 colors:3 -> Set intersection
+SDIFF colors:1 colors:2 colors:3 -> Set difference
+SINTERSTORE colors:results colors:1 colors:2 colors:3 -> This command is equal to SINTER, but instead of returning the resulting set, it is stored in destination
+SISMEMBER colors:1 purple -> is member
+`SMISMEMBER` checks for the existence of multiple different elements in a set. // Not working?
+SCARD colors:1 -> returns the cardinality, or number of elements in a set
+`SREM` removes an element from a set.
+`SSCAN` iterates through all the elements of a set page by page.  The `COUNT` option can be used to limit the number of elements returned per page
