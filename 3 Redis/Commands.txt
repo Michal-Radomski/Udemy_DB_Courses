@@ -44,3 +44,16 @@ SISMEMBER colors:1 purple -> is member
 SCARD colors:1 -> returns the cardinality, or number of elements in a set
 `SREM` removes an element from a set.
 `SSCAN` iterates through all the elements of a set page by page.  The `COUNT` option can be used to limit the number of elements returned per page
+
+
+~SORTED SET
+ZADD products 45 monitor
+ZSCORE products monitor
+ZREM products monitor
+DEL products
+
+ZADD products 45 cpu
+ZADD products 10 keyboard
+ZADD products 55 power
+ZCARD products
+ZCOUNT products 0 50
