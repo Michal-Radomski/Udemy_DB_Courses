@@ -57,3 +57,11 @@ ZADD products 10 keyboard
 ZADD products 55 power
 ZCARD products
 ZCOUNT products 0 50
+ZCOUNT products -inf inf
+ZPOPMIN products 2
+ZPOPMAX products 2
+ZINCRBY products 15 cpu
+ZRANGE products 1 2
+ZRANGE products -inf +inf BYSCORE WITHSCORES -> not working?
+ZRANGE products 1 2 REV -> not working?
+ZRANGE products 0 60 BYSCORE LIMIT 0 3 -> not working?
