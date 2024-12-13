@@ -1,3 +1,4 @@
+// Users
 export const pageCacheKey = (id: string): string => `pagecache#${id}`;
 
 export const usersKey = (userId: string): string => `users#${userId}`;
@@ -8,7 +9,7 @@ export const usernamesUniqueKey = (): string => "usernames:unique";
 
 export const userLikesKey = (userId: string): string => `users:likes#${userId}`;
 
-export const usernamesKey = () => "usernames";
+export const usernamesKey = (): string => "usernames";
 
 // Items
 export const itemsKey = (itemId: string): string => `items#${itemId}`;

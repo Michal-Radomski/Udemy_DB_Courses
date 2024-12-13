@@ -4,8 +4,7 @@ import { client } from "$services/redis";
 import { usersKey, usernamesUniqueKey, usernamesKey } from "$services/keys";
 
 export const getUserByUsername = async (username: string) => {
-  // Use the username argument to look up the persons User ID
-  // with the usernames sorted set
+  // Use the username argument to look up the persons User ID with the usernames sorted set
   const decimalId = await client.zScore(usernamesKey(), username);
 
   // make sure we actually got an ID from the lookup
