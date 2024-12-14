@@ -65,3 +65,12 @@ ZRANGE products 1 2
 ZRANGE products -inf +inf BYSCORE WITHSCORES -> not working?
 ZRANGE products 1 2 REV -> not working?
 ZRANGE products 0 60 BYSCORE LIMIT 0 3 -> not working?
+
+~SORT command
+SORT books:likes ALPHA -> sort alphabetically
+SORT books:likes LIMIT 1 2 ALPHA
+SORT books:likes BY books:*->year
+SORT books:likes BY nosort DESC
+    GET #
+    GET books:*->title
+    GET books:*->year
