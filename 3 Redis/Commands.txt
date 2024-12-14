@@ -76,3 +76,8 @@ SORT books:likes BY nosort DESC
     GET #
     GET books:*->title
     GET books:*->year
+
+~HYPERLOGLOG
+PFADD vegetables celery
+PFADD vegetables potato
+PFCOUNT vegetables
