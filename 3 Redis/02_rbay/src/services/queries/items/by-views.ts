@@ -28,5 +28,6 @@ export const itemsByViews = async (order: "DESC" | "ASC" = "DESC", offset = 0, c
     results = rest;
   }
 
+  // console.log("items:", items);
   return items;
 };
