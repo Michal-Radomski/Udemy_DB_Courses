@@ -97,3 +97,9 @@ LTRIM temps 1 3
 LINSERT temps BEFORE 25 15
 LINSERT temps AFTER 25 15
 LREM temps -1 25
+
+~Transaction
+MULTI
+SET key1 "value1"
+INCR key2
+EXEC
