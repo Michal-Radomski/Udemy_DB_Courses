@@ -74,7 +74,7 @@ for i=5, 10 do
   print(i)
 end
 
--- LUA table == JS object
+--* LUA table == JS object
 -- Creating an empty table
 myTable = {}
 

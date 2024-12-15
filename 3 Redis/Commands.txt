@@ -103,3 +103,7 @@ MULTI
 SET key1 "value1"
 INCR key2
 EXEC
+
+~LUA SCRIPTS
+SCRIPT LOAD "return 1 + 1"
+EVALSHA <script ID> 0
