@@ -1,0 +1,79 @@
+To execute a Lua file in the Ubuntu console, follow these steps:
+
+### 1. Install Lua
+
+First, ensure that the Lua interpreter is installed on your system. You can install it using the following command:
+
+```bash
+sudo apt-get install lua5.1
+```
+
+You can check if Lua is installed by running:
+
+```bash
+whereis lua
+```
+
+### 2. Create a Lua Script
+
+Create a Lua file using a text editor like `vim` or `nano`. For example, to create a simple "Hello World" script:
+
+```bash
+vim helloworld.lua
+```
+
+Add the following code to the file:
+
+```lua
+print("Hello World!")
+```
+
+Save and exit the editor.
+
+### 3. Execute the Lua Script
+
+You can execute the Lua script in two main ways:
+
+- **Using the Lua interpreter directly**:
+
+```bash
+lua helloworld.lua
+```
+
+- **Making the script executable and running it directly**:
+
+First, make the script executable with:
+
+```bash
+chmod u+x helloworld.lua
+```
+
+Then you can run it like this:
+
+```bash
+./helloworld.lua
+```
+
+### 4. Running One-liners
+
+If you want to execute simple Lua commands directly from the terminal without creating a file, you can use the `-e` option:
+
+```bash
+lua -e 'print("Hello World!")'
+```
+
+This will output "Hello World!" directly in the terminal.
+
+### Summary
+
+In summary, executing a Lua file in Ubuntu involves installing Lua, creating a script file, and then running it using either the Lua interpreter or by making it executable. This process allows you to easily run and test your Lua scripts directly from the console.
+
+Citations:
+[1] https://dev.to/tilkinsc/how-build-use-and-execute-lua-code-and-files-from-luaconsole-1hko
+[2] https://www.thegeekstuff.com/2009/12/lua-hello-world-example-how-to-write-and-execute-lua-program-on-linux-os/
+[3] https://superuser.com/questions/968774/how-to-launch-a-lua-server
+[4] https://stackoverflow.com/questions/68836183/how-can-i-write-a-lua-script-that-will-execute-a-command-on-the-linux-terminal
+[5] https://www.reddit.com/r/lua/comments/e99cf0/how_to_build_and_run_lua_files/
+[6] https://www.youtube.com/watch?v=vxIO5xkbk50
+[7] https://forums.factorio.com/viewtopic.php?t=22917
+[8] https://manpages.ubuntu.com/manpages/xenial/man1/lua5.2.1.html

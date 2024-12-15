@@ -107,3 +107,6 @@ EXEC
 ~LUA SCRIPTS
 SCRIPT LOAD "return 1 + 1"
 EVALSHA <script ID> 0
+
+SCRIPT LOAD "return 1 + tonumber(ARGV[1])"
+EVALSHA <script ID> 0 "100"
