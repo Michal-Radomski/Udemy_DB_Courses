@@ -6,7 +6,7 @@ import { client, withLock } from "$services/redis";
 import { getItem } from "./items";
 
 export const createBid = async (attrs: CreateBidAttrs) => {
-  return withLock(attrs.itemId, async (lockedClient: typeof client, signal: any) => {
+  return withLock(attrs.itemId, async (lockedClient: typeof client, signal: { expired: boolean }) => {
     // 1) Fetching the item
     // 2) Doing validation
     // 3) Writing some data
@@ -82,7 +82,7 @@ export const getBidHistory = async (itemId: string, offset = 0, count = 10): Pro
 
   const range = await client.lRange(bidHistoryKey(itemId), startIndex, endIndex);
 
-  return range.map((bid) => deserializeHistory(bid));
+  return range.map((bid: string) => deserializeHistory(bid));
 };
 
 const serializeHistory = (amount: number, createdAt: number) => {

@@ -1,7 +1,11 @@
-import { client } from "./client";
 import { randomBytes } from "crypto";
 
-export const withLock = async (key: string, cb: (redisClient: Client, signal: any) => any) => {
+import { client } from "./client";
+
+export const withLock = async (
+  key: string,
+  cb: (redisClient: Client, signal: { expired: boolean }) => void
+): Promise<void> => {
   // Initialize a few variables to control retry behavior
   const retryDelayMs = 100;
   const timeoutMs = 2000;
@@ -44,8 +48,8 @@ export const withLock = async (key: string, cb: (redisClient: Client, signal: an
 };
 
 type Client = typeof client;
-const buildClientProxy = (timeoutMs: number) => {
-  const startTime = Date.now();
+const buildClientProxy = (timeoutMs: number): Client => {
+  const startTime: number = Date.now();
 
   const handler = {
     get(target: Client, prop: keyof Client) {
