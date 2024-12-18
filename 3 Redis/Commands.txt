@@ -110,3 +110,10 @@ EVALSHA <script ID> 0
 
 SCRIPT LOAD "return 1 + tonumber(ARGV[1])"
 EVALSHA <script ID> 0 "100"
+
+~RediSearch
+FT.CREATE idx:cars ON HASH PREFIX 1 cars#
+    SCHEMA name TEXT year NUMERIC color TAG
+FT.SEARCH idx:cars '@name:(fast car)' -> text (can be typo etc) - search
+FT.SEARCH idx:cars '@color:{blue}' -> tag (exact value) - query
+FT.SEARCH idx:cars '@year:[1955 1980]' -> numeric query
