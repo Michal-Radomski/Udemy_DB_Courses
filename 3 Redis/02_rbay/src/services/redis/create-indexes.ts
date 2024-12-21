@@ -5,6 +5,7 @@ import { itemsIndexKey, itemsKey } from "$services/keys";
 
 export const createIndexes = async (): Promise<"OK"> => {
   const indexes: string[] = await client.ft._list();
+  // console.log({ indexes });
   const exists: string = indexes.find((index: string) => index === itemsIndexKey());
 
   if (exists) {
