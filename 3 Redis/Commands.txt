@@ -119,6 +119,7 @@ FT.SEARCH idx:cars '@color:{blue}' -> tag (exact value) - query
 FT.SEARCH idx:cars '@year:[1955 1980]' -> numeric query
 FT.EXPLAINCLI idx:items "chair"
 FT.PROFILE
+FT.DROPINDEX idx:items
 
 ~Streams
 XADD -> add a new message to a stream
